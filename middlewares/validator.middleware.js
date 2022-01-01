@@ -25,6 +25,3 @@ const input = (req, res, next) =>{
 module.exports = {
     input,
 }
-
-
-// /^7[05678]\d{7}$/

@@ -19,14 +19,18 @@ exports.sendMail = (req, res)=>{
         to: req.body.to,
         subject: req.body.subject,
         html: req.body.text,
+        attachments: [{   // utf-8 string as an attachment
+            filename: 'text1.pdf',
+            content: 'hello world!'
+        },]
     }
+
     transporter.sendMail(mailOptions)
-      .then((result)=>{
-          res.status(200).json({success: true, message : "Mail envoyé avec succes", data : result})
-      })
-      .catch(err=>{
-            console.log(err);
-            res.status(500).json({success: false, message : "Erreur", data : err})
-      })
+    .then((result)=>{
+        res.status(200).json({success: true, message : "Mail envoyé avec succes", data : result})
+    })
+    .catch(err=>{
+        res.status(500).json({success: false, message : "Erreur", data : err})
+    })
       
 }

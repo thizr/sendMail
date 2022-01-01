@@ -6,10 +6,6 @@ const validator = (body, rules, customMessages, callback) => {
     validation.fails(()=>callback(validation.errors, false))
 }
 
-Validator.register('mail', (text) => {
-    return text.trim() !== ""
-    },
-    'Le mail ne doit pas être vide')
 
 Validator.register('phone', (phone)=>{
     const phoneRegex = /^7[05678]{1}\d{7}$/
