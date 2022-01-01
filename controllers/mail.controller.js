@@ -20,7 +20,7 @@ exports.sendMail = (req, res)=>{
         subject: req.body.subject,
         html: req.body.text,
         attachments: [{   // utf-8 string as an attachment
-            filename: 'text1.pdf',
+            filename: 'text1.txt',
             content: 'hello world!'
         },]
     }
