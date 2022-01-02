@@ -1,12 +1,14 @@
 const express = require('express')
 const cors = require('cors')
 const bodyParser = require('body-parser')
+const path = require('path');
 
 const app = express()
 const mailRoute = require('./routes/mail.route')
 
 app.use(bodyParser.urlencoded({urlencoded: false}))
 app.use(bodyParser.json())
+app.use('/files', express.static(path.join(__dirname, 'files')));
 
 app.use(cors({
     origin : "*",

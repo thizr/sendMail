@@ -4,9 +4,9 @@ const validator = require('../helpers/validate.helper')
 const input = (req, res, next) =>{
 
     const validatiionRules = {
-        "to" : "required|email",
+        "to" : "email",
         "subject" : "string",
-        "text" : "required|string|mail",
+        "text" : "string|mail",
     }
 
     validator(req.body, validatiionRules, {}, (error, status)=>{
