@@ -21,7 +21,7 @@ exports.sendMail = (req, res)=>{
         return {path : `${req.protocol}://${req.get('host')}/files/${file.filename}`}
     })
     const mailOptions = {
-        from: "thiernondiayedeveloper@gmail.com",
+        from: req.body.from,
         to: req.body.to,
         subject: req.body.subject,
         html: req.body.text,
